@@ -1,11 +1,9 @@
 import React from 'react';
 import { Layout } from 'antd';
-const { Header, Content,Footer,Sider } = Layout;
-
+const { Header, Content,Footer } = Layout;
 import Menus from './menus/index'
 
-import logo from "../layouts/logo.jpg"
-
+import logo from "@/images/logo.jpg"
 import styles from './index.less'
 
 
