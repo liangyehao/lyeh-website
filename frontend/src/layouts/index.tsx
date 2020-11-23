@@ -4,6 +4,8 @@ const { Header, Content,Footer,Sider } = Layout;
 
 import Menus from './menus/index'
 
+import logo from "../layouts/logo.jpg"
+
 import styles from './index.less'
 
 
@@ -12,7 +14,9 @@ export default (props: { children: React.ReactNode; }) => {
     <Layout>
       <Header className={styles.header}>
         <a href={"https://github.com/liangyehao"} target="_blank" rel="noopener noreferrer">
-          <div className={styles.logo} />
+          <div className={styles.logo} >
+            <img className={styles.logoImg} src={logo} alt={logo}/>
+          </div>
         </a>
         <Menus/>
       </Header>
