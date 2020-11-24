@@ -1,8 +1,9 @@
 import React from 'react';
-import { Avatar,notification } from 'antd';
+import { Card, notification, Avatar, Divider, Skeleton, Row, Col, Tag, Space } from 'antd';
+
 import styles from './index.less';
 
-import logo from "../images/logo.jpg"
+import logo from '../images/logo.jpg';
 
 const openNotification = () => {
   notification.info({
@@ -16,15 +17,65 @@ const openNotification = () => {
 export default () => {
   openNotification();
   return (
-    <div>
-      <h1 className={styles.title}>
-        欢迎来到梁业浩的个人网站
-      </h1>
-      <div>
-        <Avatar
-          size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }}
-          src={logo} />
-      </div>
+    <div className={styles.container}>
+      <Row>
+        <Col span={4}/>
+        <Col span={12}>
+          <div className={styles.content}>
+            <h1>欢迎来到我的个人网站</h1>
+            <Skeleton loading={true}/>
+            <Skeleton loading={true}/>
+            <Skeleton loading={true}/>
+            <Skeleton loading={true}/>
+            <Skeleton loading={true}/>
+            <Skeleton loading={true}/>
+          </div>
+        </Col>
+        <Col span={6}>
+          <Card bordered={false} className={styles.personalCard}>
+            <Card.Meta
+              avatar={
+                <Avatar src={logo} size={60}/>
+              }
+              title="Liang Yehao"
+              description="努力的程序猿"
+            />
+            <Divider>前端</Divider>
+            <div>
+              <Tag color="magenta">React</Tag>
+              <Tag color="red">umi</Tag>
+              <Tag color="volcano">Dva</Tag>
+              <Tag color="orange">JQuery</Tag>
+              <Tag color="gold">html</Tag>
+              <Tag color="lime">css</Tag>
+              <Tag color="green">ES6</Tag>
+              <Tag color="cyan">javascript</Tag>
+              <Tag color="blue">Ant Design</Tag>
+              <Tag color="geekblue">Ant Design Mobile</Tag>
+              <Tag color="purple">Redux</Tag>
+            </div>
+            <Divider>后端</Divider>
+            <div>
+              <Tag color="geekblue">Spring</Tag>
+              <Tag color="red">Spring MVC</Tag>
+              <Tag color="purple">Spring Boot</Tag>
+              <Tag color="green">JPA</Tag>
+              <Tag color="gold">Oracle</Tag>
+              <Tag color="lime">MySql</Tag>
+              <Tag color="orange">ES</Tag>
+              <Tag color="cyan">Redis</Tag>
+              <Tag color="blue">Nginx</Tag>
+              <Tag color="magenta">Docker</Tag>
+              <Tag color="volcano">Kafka</Tag>
+            </div>
+          </Card>
+          <Card bordered={false} className={styles.personalCard}>
+            <Divider>其他</Divider>
+            <Skeleton/>
+          </Card>
+        </Col>
+        <Col span={2}/>
+      </Row>
       <div>
 
       </div>

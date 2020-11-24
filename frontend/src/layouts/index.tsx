@@ -20,7 +20,7 @@ export default (props: { children: React.ReactNode; }) => {
       <Content className={styles.content}>
         {props.children}
       </Content>
-      <Footer className={styles.footer}>LYeH ©2020 Created by Liang YeHao</Footer>
+      <Footer className={styles.footer}>LYeH ©2020 Created by Liang Yehao</Footer>
       <BackTop />
     </Layout>
   )
