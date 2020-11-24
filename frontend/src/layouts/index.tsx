@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout } from 'antd';
+import { Avatar, Layout,BackTop } from 'antd';
 const { Header, Content,Footer } = Layout;
 import Menus from './menus/index'
 
@@ -12,9 +12,8 @@ export default (props: { children: React.ReactNode; }) => {
     <Layout>
       <Header className={styles.header}>
         <a href={"https://github.com/liangyehao"} target="_blank" rel="noopener noreferrer">
-          <div className={styles.logo} >
-            <img className={styles.logoImg} src={logo} alt={logo}/>
-          </div>
+          <Avatar
+            src={logo} />
         </a>
         <Menus/>
       </Header>
@@ -22,6 +21,7 @@ export default (props: { children: React.ReactNode; }) => {
         {props.children}
       </Content>
       <Footer className={styles.footer}>LYeH ©2020 Created by Liang YeHao</Footer>
+      <BackTop />
     </Layout>
   )
 }

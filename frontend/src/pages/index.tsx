@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'antd';
+import { Avatar,Card } from 'antd';
 import styles from './index.less';
 
 import logo from "../images/logo.jpg"
@@ -11,9 +11,12 @@ export default () => {
         欢迎来到梁业浩的个人网站
       </h1>
       <div>
-        <Button type={'link'} href={"https://github.com/liangyehao"} target="_blank" rel="noopener noreferrer">
-          <img src={logo} className={styles.img} alt={logo}/>
-        </Button>
+        <Avatar
+          size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }}
+          src={logo} />
+      </div>
+      <div>
+
       </div>
     </div>
   );
