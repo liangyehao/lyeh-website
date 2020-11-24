@@ -15,6 +15,7 @@ export default (props: { children: React.ReactNode; }) => {
           <Avatar
             src={logo} />
         </a>
+        <span className={styles.websiteName}>Liang Yehao</span>
         <Menus/>
       </Header>
       <Content className={styles.content}>
