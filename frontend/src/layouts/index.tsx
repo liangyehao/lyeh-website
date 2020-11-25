@@ -1,10 +1,17 @@
 import React from 'react';
-import { Avatar, Layout, BackTop, Col, Row } from 'antd';
+import { Avatar, Layout, BackTop, Col, Row, Input, message } from 'antd';
 const { Header, Content,Footer } = Layout;
+import { SearchOutlined } from '@ant-design/icons';
+
+
 import Menus from './menus/index'
 
 import logo from "@/images/logo.jpg"
 import styles from './index.less'
+
+const onSearch = () => {
+  message.info({content:"功能建设中...敬请期待..." ,style: {marginTop: '20vh'}})
+};
 
 
 export default (props: { children: React.ReactNode; }) => {
@@ -22,7 +29,10 @@ export default (props: { children: React.ReactNode; }) => {
               </Col>
             </Row>
           </Col>
-          <Col span={12}/>
+          <Col span={8}/>
+          <Col span={4}>
+            <Input placeholder="站内搜索" prefix={<SearchOutlined />} onPressEnter={onSearch} />
+          </Col>
           <Col span={8}>
             <Menus />
           </Col>
