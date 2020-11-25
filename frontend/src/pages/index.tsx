@@ -8,7 +8,7 @@ import {
 
 import styles from './index.less';
 
-import logo from '../images/logo.jpg';
+import logo from '../images/me.png';
 import zfbpay from '../images/zfbpay.png';
 import wxpay from '../images/wxpay.png';
 

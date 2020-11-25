@@ -6,7 +6,7 @@ import { SearchOutlined } from '@ant-design/icons';
 
 import Menus from './menus/index'
 
-import logo from "@/images/logo.jpg"
+import logo from "@/images/me.png"
 import styles from './index.less'
 
 const onSearch = () => {
