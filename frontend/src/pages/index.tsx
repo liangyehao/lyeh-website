@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, notification, Avatar, Divider, Skeleton, Row, Col, Tag, Image} from 'antd';
+import { Card, notification, Avatar, Divider, Skeleton, Row, Col, Tag, Image, Tooltip, Button } from 'antd';
 import {
   GithubOutlined,
   WechatOutlined,
@@ -11,6 +11,8 @@ import styles from './index.less';
 import logo from '../images/me.png';
 import zfbpay from '../images/zfbpay.png';
 import wxpay from '../images/wxpay.png';
+import qq from '../images/qq.png';
+import wechat from '../images/wechat.png';
 
 const openNotification = () => {
   notification.info({
@@ -78,15 +80,21 @@ export default () => {
           </Card>
           <Card bordered={false} className={styles.personalCard}>
             <Divider>社交</Divider>
-            <Tag icon={<GithubOutlined />} color="#24292e">
-              Github
-            </Tag>
-            <Tag icon={<WechatOutlined />} color="#2ea44f">
-              微信
-            </Tag>
-            <Tag icon={<QqOutlined />} color="#12b7f5">
-              QQ
-            </Tag>
+            <a type="link" target={'_blank'} href={"https://github.com/liangyehao"}>
+              <Tag icon={<GithubOutlined />} color="#24292e">
+                Github
+              </Tag>
+            </a>
+            <Tooltip title={<Image src={wechat} width={200}/>} color="#2ea44f">
+              <Tag icon={<WechatOutlined />} color="#2ea44f">
+                微信
+              </Tag>
+            </Tooltip>
+            <Tooltip title={<Image src={qq} width={200}/>} color="#12b7f5">
+              <Tag icon={<QqOutlined />} color="#12b7f5">
+                QQ
+              </Tag>
+            </Tooltip>
             <Divider>感谢支持</Divider>
             <Image src={zfbpay} width={100}/>
           </Card>
