@@ -28,8 +28,8 @@ export default () => {
   return (
     <div className={styles.container}>
       <Row>
-        <Col span={4}/>
-        <Col span={12}>
+        <Col lg={4} xs={0}/>
+        <Col lg={12} xs={0}>
           <div className={styles.content}>
             <h1>欢迎来到我的个人网站</h1>
             <Skeleton loading={true}/>
@@ -40,7 +40,7 @@ export default () => {
             <Skeleton loading={true}/>
           </div>
         </Col>
-        <Col span={6}>
+        <Col lg={6} xs={24}>
           <Card bordered={false} className={styles.personalCard}>
             <Card.Meta
               avatar={
@@ -99,7 +99,7 @@ export default () => {
             <Image src={zfbpay} width={100}/>
           </Card>
         </Col>
-        <Col span={2}/>
+        <Col lg={2} xs={0}/>
       </Row>
       <div>
 

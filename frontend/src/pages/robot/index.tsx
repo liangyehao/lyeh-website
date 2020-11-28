@@ -1,9 +1,12 @@
 import React, { Component, useState } from 'react';
-import { Input,Alert,Divider } from "antd"
+import { Input,Alert,Divider,Button } from "antd"
 
 const {Search} = Input;
 
 import request from 'umi-request';
+
+import {goTo} from '@/common/utils';
+import config from '@/config/config';
 
 
 class Index extends Component {
@@ -11,17 +14,18 @@ class Index extends Component {
   constructor(props: {}) {
     super(props);
     this.state={
-      alertComponent:null
+      text:'随便问我点什么吧...'
     };
   }
 
   componentDidMount() {
     // this.chat("高州天气");
+    console.log(config.backendUrl)
   }
 
   chat = (msg:string) => {
     const that = this;
-    request('/tuling/openapi/api/v2', {
+    request(config.backendUrl, {
       method: 'post',
       data: {
         "reqType":0,
@@ -40,29 +44,11 @@ class Index extends Component {
         console.log(response);
         const {results} = response;
         const {values:{text}} = results[0];
-        that.setState({alertComponent:that.build(text)})
+        that.setState({text})
       })
       .catch(function(error) {
         console.log(error);
       });
-  };
-
-  build = (text:string) => {
-    return(
-      <Alert
-        message={text}
-        type="info"
-        // closable={true}
-        style={{ width: 300,margin:'auto' }}
-        onClose={this.close()}
-        closable={true}
-        showIcon
-      />
-    )
-  };
-
-  close = () => {
-    this.setState({alertComponent:null})
   };
 
   render(){
@@ -77,7 +63,15 @@ class Index extends Component {
           enterButton
         />
         <div style={{textAlign:'center'}}>
-          {this.state.alertComponent}
+          <Alert
+            message={this.state.text}
+            type="info"
+            // closable={true}
+            style={{ width: 300,margin:'auto' }}
+            onClose={close}
+            // closable={true}
+            showIcon
+          />
         </div>
       </div>
     );

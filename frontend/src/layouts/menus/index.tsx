@@ -1,6 +1,6 @@
 import React, { ReactNode, useState } from 'react';
 import { Menu, Button, message } from 'antd';
-import { MailOutlined, AppstoreOutlined, HomeOutlined, ReadOutlined } from '@ant-design/icons';
+import { MailOutlined, AppstoreOutlined, HomeOutlined, ReadOutlined, RobotOutlined } from '@ant-design/icons';
 const { SubMenu } = Menu;
 
 import {goTo} from '@/common/utils'
@@ -33,6 +33,9 @@ const linkTo = (item:any = {key:'home'},func:any) =>{
   if (item.key === 'home') {
     goTo("/")
   }
+  if (item.key === 'robot') {
+    goTo("/robot")
+  }
   func(item.key);
 }
 
@@ -44,6 +47,7 @@ export default (props:any) => {
   return (
     <div className={styles.container}>
       <Menu selectedKeys={[key]} mode="horizontal" onClick={(item)=>{linkTo(item,setKey)}}>
+        <Menu.Item key="robot" icon={<RobotOutlined />} />
         <Menu.Item key="home" icon={<HomeOutlined/>}>
           主页
         </Menu.Item>

@@ -1,7 +1,9 @@
 import React from 'react';
-import { Avatar, Layout, BackTop, Col, Row, Input, message } from 'antd';
+import { Avatar, Layout, BackTop, Col, Row, Input, message,Button } from 'antd';
 const { Header, Content,Footer } = Layout;
 import { SearchOutlined } from '@ant-design/icons';
+
+import {goTo} from '@/common/utils';
 
 
 import Menus from './menus/index'
@@ -21,10 +23,12 @@ export default (props: { children: React.ReactNode; }) => {
         <Row>
           <Col span={4}>
             <Row>
-              <Col>
-                <Avatar src={logo} />
+              <Col xs={24} sm={24} md={24} lg={24} xl={4} >
+                <Button type={'link'} onClick={()=>goTo("/")}>
+                  <Avatar src={logo} />
+                </Button>
               </Col>
-              <Col>
+              <Col xs={0} sm={0} md={0} lg={0} xl={20}>
                 <span className={styles.websiteName}>Liang Yehao</span>
               </Col>
             </Row>
