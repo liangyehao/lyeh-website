@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { ReactNode, useState } from 'react';
 import { Menu, Button, message } from 'antd';
 import { MailOutlined, AppstoreOutlined, HomeOutlined, ReadOutlined } from '@ant-design/icons';
-
 const { SubMenu } = Menu;
+
+import {goTo} from '@/common/utils'
 
 import styles from './index.less';
 
@@ -28,10 +29,21 @@ const infoButton = (text: string, info: string) => {
   );
 };
 
-export default () => {
+const linkTo = (item:any = {key:'home'},func:any) =>{
+  if (item.key === 'home') {
+    goTo("/")
+  }
+  func(item.key);
+}
+
+
+export default (props:any) => {
+
+  const [key,setKey] = useState("home")
+
   return (
     <div className={styles.container}>
-      <Menu selectedKeys={['home']} mode="horizontal">
+      <Menu selectedKeys={[key]} mode="horizontal" onClick={(item)=>{linkTo(item,setKey)}}>
         <Menu.Item key="home" icon={<HomeOutlined/>}>
           主页
         </Menu.Item>
